@@ -5,9 +5,8 @@ global_night_start = "22:00"
 global_night_end = "05:00"
 global_overtime_hours = 8
 
+
 # 深夜時間が何時間か計算する関数
-
-
 def night_time(start, end):
     # 22:00と翌5:00をdatetimeオブジェクトとして定義
     night_start = datetime.datetime.strptime(global_night_start, "%H:%M")
@@ -31,9 +30,8 @@ def night_time(start, end):
     # 被っている時間が0未満（被っていない場合）なら0を返す
     return max(0, overlap)
 
+
 # 給与計算
-
-
 def calculate_pay(start_time, end_time, break_time, night_break_time, hourly_wage):
     # datetimeオブジェクトを生成
     start_time = datetime.datetime.strptime(start_time, "%H:%M")

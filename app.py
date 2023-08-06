@@ -75,10 +75,12 @@ st.title("給与計算アプリ")
 
 start_time = st.text_input('開始時刻を入力してください (半角、24時間形式でHH：MM)', value='10:00')
 end_time = st.text_input('終了時刻を入力してください (半角、24時間形式でHH：MM)', value='18:00')
-break_time = st.number_input('休憩時間を入力してください（時間）:', min_value=0.0, step=0.25)
+break_time = st.number_input(
+    '休憩時間を入力してください（時間）:', min_value=0.0, step=0.25, value=1.0)
 night_break_time = st.number_input(
     '深夜休憩時間を入力してください（時間）:', min_value=0.0, step=0.25)
-hourly_wage = st.number_input('時給を入力してください（円）:', min_value=0, step=100)
+hourly_wage = st.number_input(
+    '時給を入力してください（円）:', min_value=0, step=100, value=1000)
 
 if st.button('計算'):
     pay_info = calculate_pay(start_time, end_time, break_time,
